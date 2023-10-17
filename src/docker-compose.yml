@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+    userverification:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        ports:
+          - "5058:5058"
+        restart: on-failure
+        environment:
+          - ASPNETCORE_ENVIRONMENT=Development
+          - ASPNETCORE_URLS=http://+:5058
